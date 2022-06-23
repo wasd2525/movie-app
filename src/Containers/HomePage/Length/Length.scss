@@ -1,0 +1,123 @@
+#home {
+  position: relative;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-color: var(--primary-color);
+
+  .app__wrapper {
+    padding: 0;
+
+    .copyright {
+      display: none;
+    }
+  }
+}
+
+.app__length {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (min-width: 2000px) {
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 6rem 1rem;
+  }
+}
+
+.app__length-info {
+  flex: 0.5;
+
+  @media screen and (max-width: 2000px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 756px) {
+    flex: 1;
+  }
+}
+
+.app__length-badge {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .badge-cmp {
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: 85vh;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+}
+
+.span-col-3 {
+  grid-column: span 3 / auto;
+}
+
+.span-col-2 {
+  grid-column: span 2 / auto;
+}
+
+.span-row-2 {
+  grid-row: span 2 / auto;
+}
+
+.span-row-3 {
+  grid-row: span 3 / auto;
+}
+
+.button__notselected-length,
+.button__selected-length {
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  border: 0px solid;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.3vw;
+  padding: 0.7rem;
+}
+.button__selected-length {
+  background-color: #df7861;
+  color: var(--primary-color);
+}
+
+.app__length-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  @media screen and (max-width: 756px) {
+    flex-direction: column;
+  }
+
+  button {
+    width: 15vw;
+    height: 40vh;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 0px;
+    cursor: pointer;
+    @media screen and (max-width: 756px) {
+      width: 50vw;
+      height: 15vh;
+      margin: 1rem;
+    }
+  }
+}
