@@ -3,20 +3,26 @@ import Home from "./Containers/HomePage/Home";
 import "./App.scss";
 import { MovieProvider } from "./MovieContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MoviePage from "./Containers/MoviePage/MoviePage";
 import Test from "./Containers/Test/Test";
+import Navbar from "./Components/Navbar";
 
 const App = () => {
   return (
-    <div className="app__wrapper">
-      <MovieProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/test/:id" element={<Test />} />
-          </Routes>
-        </BrowserRouter>
-      </MovieProvider>
-    </div>
+    <>
+      <Navbar />
+      <div className="app__wrapper">
+        <MovieProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/movie/:id" element={<MoviePage />} />
+              <Route path="/test" element={<Test />} />
+            </Routes>
+          </BrowserRouter>
+        </MovieProvider>
+      </div>
+    </>
   );
 };
 

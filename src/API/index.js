@@ -45,3 +45,21 @@ export const fetchTrailer = async (id) => {
     console.log(error);
   }
 };
+
+export const fetchMovieID = async (decade, genres, length) => {
+  try {
+    const request = await instance.get(
+      `/discover/movie?api_key=ccba5e877c1dae0c4d6ee7398e0fe4e6&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=${
+        decade.from
+      }-01-01&primary_release_date.lte=${
+        decade.to
+      }-12-31&with_genres=${genres.join("%2C")}&with_runtime.gte=${
+        length.from
+      }&with_runtime.lte=${length.to}&with_watch_monetization_types=flatrate`
+    );
+
+    return request;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -16,7 +16,7 @@ export function MovieProvider({ children }) {
     else
       setMovie({
         ...movie,
-        ["genres"]: movie.genres.filter((genre) => genre != movieData),
+        ["genres"]: movie.genres.filter((genre) => genre.id != movieData),
       });
   };
   const updateMovieLength = (action, movieData) => {
@@ -29,7 +29,7 @@ export function MovieProvider({ children }) {
           setMovie({ ...movie, ["length"]: { from: 106, to: 120 } });
           break;
         case "long":
-          setMovie({ ...movie, ["length"]: { from: 121, to: 0 } });
+          setMovie({ ...movie, ["length"]: { from: 121, to: 1000 } });
           break;
       }
     } else setMovie({ ...movie, ["length"]: { from: null, to: null } });

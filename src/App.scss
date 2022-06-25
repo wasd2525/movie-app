@@ -32,10 +32,7 @@
   flex: 1;
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  padding: 2rem 2rem;
   background-color: var(--primary-color);
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -217,4 +214,40 @@
   .copyright {
     padding: 2rem;
   }
+}
+
+.buttonStep {
+  background-color: #ecb390;
+  min-width: 6rem;
+  height: 100%;
+  border-radius: 5px;
+  margin: 1.5rem 1rem 0 0;
+  height: 5vh;
+  border: 0px solid;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.buttonALT,
+.buttonALT2 {
+  background-color: #ecb390;
+  min-width: 15vw;
+  height: 100%;
+  min-height: 6vh;
+  border-radius: 5px;
+  margin: 3rem 1rem 0 0;
+  height: 5vh;
+  border: 0px solid;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.buttonALT2 {
+  background-color: #df7861;
+  margin: 0 0 0 0;
 }

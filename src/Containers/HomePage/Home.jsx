@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Genres from "./Genres/Genres";
 import Length from "./Length/Length.jsx";
 import Decades from "./Decades/Decades.jsx";
+import Navbar from "../../Components/Navbar";
 
 const Home = () => {
   const [step, setStep] = useState(1);
@@ -16,17 +17,30 @@ const Home = () => {
     }
   };
   return (
-    <>
+    <div style={{ padding: "3rem 3rem" }}>
       {stepper()}
-      <button onClick={() => setStep(step + 1)}>next</button>
-      <button onClick={() => setStep(step - 1)}>Prev</button>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <button className="buttonStep" onClick={() => setStep(step - 1)}>
+          Prev
+        </button>
+        <button className="buttonStep" onClick={() => setStep(step + 1)}>
+          Next
+        </button>
+      </div>
       <div className="copyright">
         <div className="copyright-wrapper">
           <p className="p-text">a project by ben hazan @2022</p>
           <p className="p-text">All Rights Reserved</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

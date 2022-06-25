@@ -1,13 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Decades.scss";
 import { motion } from "framer-motion";
 import MovieContext from "../../../MovieContext";
+import { fetchMovieID } from "../../../API";
 
 const Decades = () => {
   const { updateMovieDecade, movie } = useContext(MovieContext);
+  const navigate = useNavigate();
 
   const selectDecade = (e) => {
     updateMovieDecade("add", e.target.name);
+  };
+
+  const fetchMovie = async () => {
+    const id = await fetchMovieID(
+      movie.decades,
+      movie.genres.map((genre) => genre.id),
+      movie.length
+    );
+    navigate(`/movie/${id.data.results[0].id}`);
   };
 
   return (
@@ -72,6 +84,9 @@ const Decades = () => {
                 2010s
               </button>
             </div>
+            <button onClick={fetchMovie} className="buttonALT2">
+              find movie
+            </button>
           </div>
         </div>
       </motion.div>

@@ -10,9 +10,9 @@ const Genres = () => {
   const [genreList, setGenreList] = useState();
 
   const selectGenre = (e) => {
-    if (!movie.genres.includes(e.target.name))
-      updateMovieGenre("add", e.target.name);
-    else updateMovieGenre("remove", e.target.name);
+    if (!movie.genres.find((x) => x.id == e.target.id))
+      updateMovieGenre("add", { id: e.target.id, name: e.target.name });
+    else updateMovieGenre("remove", e.target.id);
   };
 
   useEffect(() => {
@@ -40,9 +40,10 @@ const Genres = () => {
                 <div className={`itemG span-col-2 span-row-2`}>
                   <button
                     name={i.name}
+                    id={i.id}
                     onClick={selectGenre}
                     className={
-                      movie.genres.includes(i.name)
+                      movie.genres.find((x) => x.id == i.id)
                         ? "button__selected-genre"
                         : "button__notselected-genre"
                     }
