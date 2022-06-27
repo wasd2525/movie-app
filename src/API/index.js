@@ -5,7 +5,7 @@ const instance = axios.create({ baseURL: "https://api.themoviedb.org/3" });
 export const fetchGenres = async () => {
   try {
     const request = await instance.get(
-      `/genre/movie/list?api_key=ccba5e877c1dae0c4d6ee7398e0fe4e6&language=en-US`
+      `/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     return request;
   } catch (error) {
@@ -16,7 +16,7 @@ export const fetchGenres = async () => {
 export const fetchMovie = async (id) => {
   try {
     const request = await instance.get(
-      `/movie/${id}?api_key=ccba5e877c1dae0c4d6ee7398e0fe4e6&language=en-US`
+      `/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     return request;
   } catch (error) {
@@ -27,7 +27,7 @@ export const fetchMovie = async (id) => {
 export const fetchSimilar = async (id) => {
   try {
     const request = await instance.get(
-      `/movie/${id}/similar?api_key=ccba5e877c1dae0c4d6ee7398e0fe4e6&language=en-US&page=1`
+      `/movie/${id}/similar?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
     );
     return request;
   } catch (error) {
@@ -38,7 +38,7 @@ export const fetchSimilar = async (id) => {
 export const fetchTrailer = async (id) => {
   try {
     const request = await instance.get(
-      `/movie/${id}/videos?api_key=ccba5e877c1dae0c4d6ee7398e0fe4e6&language=en-US`
+      `/movie/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     return request;
   } catch (error) {
@@ -49,7 +49,9 @@ export const fetchTrailer = async (id) => {
 export const fetchMovieID = async (decade, genres, length) => {
   try {
     const request = await instance.get(
-      `/discover/movie?api_key=ccba5e877c1dae0c4d6ee7398e0fe4e6&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=${
+      `/discover/movie?api_key=${
+        process.env.REACT_APP_API_KEY
+      }&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=${
         decade.from
       }-01-01&primary_release_date.lte=${
         decade.to

@@ -3,6 +3,7 @@ import "./MoviePage.scss";
 import { motion } from "framer-motion";
 import { fetchMovie, fetchTrailer, fetchSimilar } from "../../API/index";
 import dis from "../../assets/dis.png";
+import noData from "../../assets/data.jpg";
 
 import { useParams } from "react-router-dom";
 
@@ -49,7 +50,11 @@ const MoviePage = () => {
                 filter: "brightness(50%)",
               }}
               alt="backdrop"
-              src={`${imgUrl}${movie?.backdrop_path}`}
+              src={
+                movie.backdrop_path
+                  ? `${imgUrl}${movie?.backdrop_path}`
+                  : noData
+              }
             />
 
             <div style={{ left: "3%" }} className="movie-data-cmp">
