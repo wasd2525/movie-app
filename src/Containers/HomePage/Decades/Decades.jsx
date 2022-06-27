@@ -19,7 +19,11 @@ const Decades = () => {
       movie.genres.map((genre) => genre.id),
       movie.length
     );
-    navigate(`/movie/${id.data.results[0].id}`);
+    navigate(
+      `/movie/${
+        id.data.results[Math.floor(Math.random() * id.data.results.length)].id
+      }`
+    );
   };
 
   return (
@@ -84,7 +88,7 @@ const Decades = () => {
                 2010s
               </button>
             </div>
-            <button disabled onClick={fetchMovie} className="buttonALT2">
+            <button onClick={fetchMovie} className="buttonALT2">
               find movie
             </button>
           </div>

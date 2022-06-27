@@ -134,13 +134,13 @@ const MoviePage = () => {
                   </button>
                 </a>
               </div>
-              <a
-                href={`https://www.imdb.com/title/${movie.imdb_id}`}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={`/movie`} rel="noreferrer">
                 <button
-                  style={{ backgroundColor: "#f3ce13", width: "13rem" }}
+                  style={{
+                    backgroundColor: "#df7861",
+                    width: "13rem",
+                    color: "#fcf8e8",
+                  }}
                   className="button"
                 >
                   Restart
