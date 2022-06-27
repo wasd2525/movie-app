@@ -55,7 +55,7 @@ const MoviePage = () => {
               </h2>
 
               <h4>
-                {movie.genres?.map((genre) => genre.name + " ")}
+                {movie.genres?.map((genre) => genre.name).join(" - ")}
                 <br />
                 Runtime: {movie.runtime}m
               </h4>

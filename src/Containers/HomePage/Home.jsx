@@ -36,8 +36,8 @@ const Home = () => {
       </div>
       <div className="copyright">
         <div className="copyright-wrapper">
-          <p className="p-text">a project by ben hazan @2022</p>
-          <p className="p-text">All Rights Reserved</p>
+          <p className="p-text">a project by ben hazan</p>
+          <p className="p-text">@2022</p>
         </div>
       </div>
     </div>

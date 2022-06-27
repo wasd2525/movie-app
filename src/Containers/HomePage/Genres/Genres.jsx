@@ -30,7 +30,7 @@ const Genres = () => {
       >
         <div className="app__genres-badge">
           <div className="badge-cmp app__flex">
-            <div style={{ padding: "2rem 1rem" }}>
+            <div style={{ padding: "2rem 0rem" }}>
               <h2 className="title-text">Pick a Genre</h2>
               <h2 className="p-text">Pick up to 4 Genres</h2>
             </div>

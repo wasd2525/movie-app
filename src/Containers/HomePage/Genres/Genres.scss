@@ -23,7 +23,7 @@
   }
 
   @media screen and (max-width: 450px) {
-    padding: 6rem 1rem;
+    padding: 1rem 1rem;
   }
 }
 
@@ -68,6 +68,11 @@
   display: grid;
   grid-template-columns: repeat(6, 2fr);
   grid-gap: 20px;
+
+  @media screen and (max-width: "756px") {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
 }
 
 .itemG {
@@ -78,8 +83,8 @@
   color: var(--primary-color);
   position: relative;
   @media screen and (max-width: 756px) {
-    min-height: 10vh;
-    min-width: 10vw;
+    min-height: 15vh;
+    min-width: 40vw;
   }
 }
 .span-col-3 {
@@ -111,6 +116,9 @@
   font-size: 1.3vw;
   padding: 0.7rem;
   display: inline-flex;
+  @media screen and (max-width: "756px") {
+    font-size: 1.2rem;
+  }
 }
 .button__selected-genre {
   background-color: #df7861;

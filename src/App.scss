@@ -28,6 +28,16 @@
   align-items: center;
 }
 
+.app__flex-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: "756px") {
+    flex-direction: column-reverse;
+  }
+}
+
 .app__wrapper {
   flex: 1;
   width: 100%;
@@ -36,8 +46,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 450px) {
-    padding: 4rem 1rem 2rem;
+  @media screen and (max-width: 756px) {
+    padding: 1rem 1rem 2rem;
   }
 }
 
@@ -71,9 +81,8 @@
 
   color: black;
   text-transform: capitalize;
-  @media screen and (max-width: 450px) {
-    font-size: 20vw;
-    line-height: 20vw;
+  @media screen and (max-width: 756px) {
+    font-size: 3rem;
   }
 }
 
@@ -245,9 +254,15 @@
   font-weight: 800;
   font-size: 1rem;
   text-transform: uppercase;
+  @media screen and (max-width: "756px") {
+    min-width: 40vw;
+  }
 }
 
 .buttonALT2 {
   background-color: #df7861;
-  margin: 0 0 0 0;
+  margin: 3rem 0 0 0;
+  @media screen and (max-width: "756px") {
+    margin: 2rem;
+  }
 }

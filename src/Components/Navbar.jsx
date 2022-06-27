@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Navbar.scss";
-import icon from "../assets/icon.png";
+import logo from "../assets/logo-alt.svg";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <a href="/">
-          <img src={icon} />
+          <img src={logo} />
         </a>
       </div>
       <ul className="app__navbar-links">

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MoviePage from "./Containers/MoviePage/MoviePage";
 import Test from "./Containers/Test/Test";
 import Navbar from "./Components/Navbar";
+import HomePage from "./Containers/HomePage/HomePage";
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
         <MovieProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/movie" element={<Home />} />
               <Route path="/movie/:id" element={<MoviePage />} />
               <Route path="/test" element={<Test />} />
             </Routes>

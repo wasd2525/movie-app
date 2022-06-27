@@ -23,8 +23,8 @@
     padding-top: 8rem;
   }
 
-  @media screen and (max-width: 450px) {
-    padding: 6rem 1rem;
+  @media screen and (max-width: 756px) {
+    padding: 1rem 1rem;
   }
 }
 
@@ -88,6 +88,9 @@
   font-weight: 800;
   font-size: 1.3vw;
   padding: 0.7rem;
+  @media screen and (max-width: "756px") {
+    font-size: 1.2rem;
+  }
 }
 .button__selected-length {
   background-color: #df7861;
@@ -115,7 +118,7 @@
     border: 0px;
     cursor: pointer;
     @media screen and (max-width: 756px) {
-      width: 50vw;
+      width: 70vw;
       height: 15vh;
       margin: 1rem;
     }
