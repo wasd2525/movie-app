@@ -28,13 +28,13 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        {step == 1 && (
+        {step === 1 && (
           <button className="buttonStep" onClick={() => setStep(step + 1)}>
             Next
           </button>
         )}
 
-        {step == 2 && (
+        {step === 2 && (
           <>
             <button className="buttonStep" onClick={() => setStep(step - 1)}>
               Prev
@@ -45,7 +45,7 @@ const Home = () => {
           </>
         )}
 
-        {step == 3 && (
+        {step === 3 && (
           <button className="buttonStep" onClick={() => setStep(step - 1)}>
             Prev
           </button>
