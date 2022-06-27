@@ -79,7 +79,7 @@
   text-align: center;
   font-family: var(--font-base);
 
-  color: black;
+  color: #333333;
   text-transform: capitalize;
   @media screen and (max-width: 756px) {
     font-size: 3rem;
@@ -112,7 +112,7 @@
   text-align: center;
   color: var(--secondary-color);
   font-family: var(--font-base);
-  color: black;
+  color: #333333;
 
   @media screen and (min-width: 2000px) {
     font-size: 1.75rem;

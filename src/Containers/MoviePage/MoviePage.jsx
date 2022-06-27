@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./MoviePage.scss";
 import { motion } from "framer-motion";
 import { fetchMovie, fetchTrailer, fetchSimilar } from "../../API/index";
+import dis from "../../assets/dis.png";
 
 import { useParams } from "react-router-dom";
 
@@ -50,7 +51,57 @@ const MoviePage = () => {
               alt="backdrop"
               src={`${imgUrl}${movie?.backdrop_path}`}
             />
+
             <div style={{ left: "3%" }} className="movie-data-cmp">
+              <div style={{ paddingBottom: "20px" }}>
+                {/* <a
+                  href={`https://www.youtube.com/watch?v=${
+                    trailer.filter((video) => video.type === "Trailer")[0]?.key
+                  }`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <button
+                    style={{
+                      height: "5vh",
+                      marginRight: "10px",
+                    }}
+                    className="buttonP"
+                  >
+                    <img
+                      style={{
+                        width: "30px",
+                        boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
+                      }}
+                      alt="netflix"
+                      src={`${imgUrl}/t2yyOv40HZeVlLjYsCsPHnWLk4W.jpg`}
+                    />
+                  </button>
+                </a> */}
+                <a
+                  href={`https://www.youtube.com/watch?v=${
+                    trailer.filter((video) => video.type === "Trailer")[0]?.key
+                  }`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <button
+                    style={{
+                      height: "5vh",
+                      backgroundColor: "white",
+                    }}
+                    className="buttonP"
+                  >
+                    <img
+                      style={{
+                        width: "40px",
+                      }}
+                      alt="disney"
+                      src={dis}
+                    />
+                  </button>
+                </a>
+              </div>
               <h2 style={{ marginBottom: "10px" }}>
                 {movie?.title} ({movie.release_date?.slice(0, 4)})
               </h2>
@@ -83,34 +134,18 @@ const MoviePage = () => {
                   </button>
                 </a>
               </div>
-            </div>
-            <div style={{ right: "3%" }} className="movie-data-cmp">
-              <div>
-                <a
-                  href={`https://www.youtube.com/watch?v=${
-                    trailer.filter((video) => video.type === "Trailer")[0]?.key
-                  }`}
-                  target="_blank"
-                  rel="noreferrer"
+              <a
+                href={`https://www.imdb.com/title/${movie.imdb_id}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button
+                  style={{ backgroundColor: "#f3ce13", width: "13rem" }}
+                  className="button"
                 >
-                  <button
-                    style={{
-                      width: "5vw",
-                      height: "8vh",
-                    }}
-                    className="buttonP"
-                  >
-                    <img
-                      style={{
-                        width: "50px",
-                        boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
-                      }}
-                      alt="netflix"
-                      src={`${imgUrl}/t2yyOv40HZeVlLjYsCsPHnWLk4W.jpg`}
-                    />
-                  </button>
-                </a>
-              </div>
+                  Restart
+                </button>
+              </a>
             </div>
           </div>
 
@@ -124,8 +159,9 @@ const MoviePage = () => {
           >
             <h2 style={{ color: "#ECB390" }}>Description:</h2>
             <br />
-            <h3>{movie?.overview}</h3>
+            <h3 style={{ color: "#333333" }}>{movie?.overview}</h3>
           </div>
+
           <div style={{ width: "100%", padding: "3rem 2rem 1rem 1rem" }}>
             <h3
               style={{ fontSize: "2.5rem", textAlign: "left" }}

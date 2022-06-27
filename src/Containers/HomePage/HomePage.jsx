@@ -25,11 +25,7 @@ const HomePage = () => {
               Welcome to
               {/* <span style={{ color: "#94b49f" }}>Movie</span> */}
             </h2>
-            <img
-              style={{ width: "30vw", marginTop: "20px" }}
-              src={randomovie}
-              alt="logo"
-            />
+            <img src={randomovie} alt="logo" className="logo" />
             <a href="/movie">
               <button className="buttonALT">Begin</button>
             </a>
