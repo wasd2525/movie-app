@@ -84,7 +84,7 @@ const Decades = () => {
                 2010s
               </button>
             </div>
-            <button onClick={fetchMovie} className="buttonALT2">
+            <button disabled onClick={fetchMovie} className="buttonALT2">
               find movie
             </button>
           </div>

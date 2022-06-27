@@ -28,12 +28,28 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <button className="buttonStep" onClick={() => setStep(step - 1)}>
-          Prev
-        </button>
-        <button className="buttonStep" onClick={() => setStep(step + 1)}>
-          Next
-        </button>
+        {step == 1 && (
+          <button className="buttonStep" onClick={() => setStep(step + 1)}>
+            Next
+          </button>
+        )}
+
+        {step == 2 && (
+          <>
+            <button className="buttonStep" onClick={() => setStep(step - 1)}>
+              Prev
+            </button>
+            <button className="buttonStep" onClick={() => setStep(step + 1)}>
+              Next
+            </button>
+          </>
+        )}
+
+        {step == 3 && (
+          <button className="buttonStep" onClick={() => setStep(step - 1)}>
+            Prev
+          </button>
+        )}
       </div>
       <div className="copyright">
         <div className="copyright-wrapper">
