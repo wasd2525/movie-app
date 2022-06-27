@@ -28,7 +28,7 @@ const Length = () => {
               <button
                 name="short"
                 className={
-                  movie.length.from != 87 || movie.length.from == null
+                  movie.length.from !== 87 || movie.length.from == null
                     ? "button__notselected-length"
                     : "button__selected-length"
                 }
@@ -39,7 +39,7 @@ const Length = () => {
               <button
                 name="med"
                 className={
-                  movie.length.from != 106 || movie.length.from == null
+                  movie.length.from !== 106 || movie.length.from == null
                     ? "button__notselected-length"
                     : "button__selected-length"
                 }
@@ -52,7 +52,7 @@ const Length = () => {
                 name="long"
                 length="121"
                 className={
-                  movie.length.from != 121 || movie.length.from == null
+                  movie.length.from !== 121 || movie.length.from == null
                     ? "button__notselected-length"
                     : "button__selected-length"
                 }

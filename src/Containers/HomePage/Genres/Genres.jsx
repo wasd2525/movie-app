@@ -10,7 +10,7 @@ const Genres = () => {
   const [genreList, setGenreList] = useState();
 
   const selectGenre = (e) => {
-    if (!movie.genres.find((x) => x.id == e.target.id))
+    if (!movie.genres.find((x) => String(x.id) === String(e.target.id)))
       updateMovieGenre("add", { id: e.target.id, name: e.target.name });
     else updateMovieGenre("remove", e.target.id);
   };
@@ -43,7 +43,7 @@ const Genres = () => {
                     id={i.id}
                     onClick={selectGenre}
                     className={
-                      movie.genres.find((x) => x.id == i.id)
+                      movie.genres.find((x) => String(x.id) === String(i.id))
                         ? "button__selected-genre"
                         : "button__notselected-genre"
                     }

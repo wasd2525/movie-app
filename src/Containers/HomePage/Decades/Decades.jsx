@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Decades.scss";
 import { motion } from "framer-motion";
@@ -39,7 +39,7 @@ const Decades = () => {
             <div className="app__decades-buttons">
               <button
                 className={
-                  movie.decades.from != 1927 || movie.decades.from == null
+                  movie.decades.from !== 1927 || movie.decades.from == null
                     ? "button__notselected-decades"
                     : "button__selected-decades"
                 }
@@ -50,7 +50,7 @@ const Decades = () => {
               </button>
               <button
                 className={
-                  movie.decades.from != 1990 || movie.decades.from == null
+                  movie.decades.from !== 1990 || movie.decades.from == null
                     ? "button__notselected-decades"
                     : "button__selected-decades"
                 }
@@ -61,7 +61,7 @@ const Decades = () => {
               </button>
               <button
                 className={
-                  movie.decades.from != 2000 || movie.decades.from == null
+                  movie.decades.from !== 2000 || movie.decades.from == null
                     ? "button__notselected-decades"
                     : "button__selected-decades"
                 }
@@ -73,7 +73,7 @@ const Decades = () => {
               </button>
               <button
                 className={
-                  movie.decades.from != 2010 || movie.decades.from == null
+                  movie.decades.from !== 2010 || movie.decades.from == null
                     ? "button__notselected-decades"
                     : "button__selected-decades"
                 }

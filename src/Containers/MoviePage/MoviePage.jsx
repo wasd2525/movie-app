@@ -3,7 +3,7 @@ import "./MoviePage.scss";
 import { motion } from "framer-motion";
 import { fetchMovie, fetchTrailer, fetchSimilar } from "../../API/index";
 
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const MoviePage = () => {
   const [movie, setMovie] = useState({});
@@ -24,7 +24,7 @@ const MoviePage = () => {
     fetchSimilar(id).then((req) => {
       setSimilar(req.data.results);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div className="app__movie app__flex">
@@ -47,6 +47,7 @@ const MoviePage = () => {
                 borderRadius: "15px",
                 filter: "brightness(50%)",
               }}
+              alt="backdrop"
               src={`${imgUrl}${movie?.backdrop_path}`}
             />
             <div style={{ left: "3%" }} className="movie-data-cmp">
@@ -62,7 +63,7 @@ const MoviePage = () => {
               <div>
                 <a
                   href={`https://www.youtube.com/watch?v=${
-                    trailer.filter((video) => video.type == "Trailer")[0]?.key
+                    trailer.filter((video) => video.type === "Trailer")[0]?.key
                   }`}
                   target="_blank"
                   rel="noreferrer"
@@ -87,7 +88,7 @@ const MoviePage = () => {
               <div>
                 <a
                   href={`https://www.youtube.com/watch?v=${
-                    trailer.filter((video) => video.type == "Trailer")[0]?.key
+                    trailer.filter((video) => video.type === "Trailer")[0]?.key
                   }`}
                   target="_blank"
                   rel="noreferrer"
@@ -104,6 +105,7 @@ const MoviePage = () => {
                         width: "50px",
                         boxShadow: "0 0 20px rgba(0, 0, 0, 0.3)",
                       }}
+                      alt="netflix"
                       src={`${imgUrl}/t2yyOv40HZeVlLjYsCsPHnWLk4W.jpg`}
                     />
                   </button>
@@ -147,6 +149,7 @@ const MoviePage = () => {
                       borderRadius: "15px",
                       filter: "brightness(70%)",
                     }}
+                    alt="backdrop"
                     src={`${imgUrlS}${simMovie?.backdrop_path}`}
                   />
                   <div className="movie-data-cmp">

@@ -28,12 +28,13 @@ const HomePage = () => {
             <img
               style={{ width: "30vw", marginTop: "20px" }}
               src={randomovie}
+              alt="logo"
             />
             <a href="/movie">
               <button className="buttonALT">Begin</button>
             </a>
           </div>
-          <img src={movieIcon} className="movieIMG" />
+          <img alt="background" src={movieIcon} className="movieIMG" />
         </div>
       </motion.div>
     </div>

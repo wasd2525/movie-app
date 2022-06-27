@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Test.scss";
 import { motion } from "framer-motion";
 import movieIcon from "../../assets/movie.svg";
@@ -30,7 +30,7 @@ const Test = () => {
               <button className="buttonALT">Begin</button>
             </a>
           </div>
-          <img src={movieIcon} style={{ width: "50%" }} />
+          <img alt="icon" src={movieIcon} style={{ width: "50%" }} />
         </div>
       </motion.div>
     </div>

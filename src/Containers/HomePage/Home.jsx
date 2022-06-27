@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Genres from "./Genres/Genres";
 import Length from "./Length/Length.jsx";
 import Decades from "./Decades/Decades.jsx";
-import Navbar from "../../Components/Navbar";
 
 const Home = () => {
   const [step, setStep] = useState(1);
@@ -14,6 +13,8 @@ const Home = () => {
         return <Length setStep={setStep} />;
       case 3:
         return <Decades setStep={setStep} />;
+      default:
+        return null;
     }
   };
   return (

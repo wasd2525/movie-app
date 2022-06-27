@@ -1,16 +1,13 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import "./Navbar.scss";
 import logo from "../assets/logo-alt.svg";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
-
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <a href="/">
-          <img src={logo} />
+          <img alt="logo" src={logo} />
         </a>
       </div>
       <ul className="app__navbar-links">
