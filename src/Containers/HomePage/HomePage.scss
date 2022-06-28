@@ -15,6 +15,16 @@
   }
 }
 
+.app__flex-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: "756px") {
+    flex-direction: column-reverse;
+  }
+}
+
 .app__home-info {
   flex: 0.7;
   @media screen and (max-width: 2000px) {
@@ -66,7 +76,7 @@
   .badge-cmp-desc {
     height: auto;
     margin-top: 3vh;
-    color: black;
+    color: var(--black-color);
     padding: 2rem;
     font-family: var(--font-base);
     line-height: 1.8rem;
@@ -76,32 +86,6 @@
     justify-content: flex-start;
     align-items: flex-start;
   }
-}
-
-.button {
-  background-color: #fcf8e8;
-  min-width: 6rem;
-  height: 100%;
-  border-radius: 5px;
-  margin: 1.5rem 1rem 0 0;
-  height: 5vh;
-  border: 0px solid;
-  color: black;
-  cursor: pointer;
-  font-weight: 800;
-  font-size: 0.8rem;
-}
-.buttonP {
-  background-color: #000;
-  min-width: 4rem;
-  height: 100%;
-  border-radius: 5px;
-  height: 5vh;
-  border: 0px solid;
-  color: black;
-  cursor: pointer;
-  font-weight: 800;
-  font-size: 0.8rem;
 }
 
 // .app__recommended {

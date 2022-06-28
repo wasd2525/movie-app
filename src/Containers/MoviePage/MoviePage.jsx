@@ -142,7 +142,7 @@ const MoviePage = () => {
               <a href={`/movie`} rel="noreferrer">
                 <button
                   style={{
-                    backgroundColor: "#df7861",
+                    backgroundColor: "var(--button-color",
                     width: "13rem",
                     color: "#fcf8e8",
                   }}
@@ -162,7 +162,7 @@ const MoviePage = () => {
             }}
             className="badge-cmp-desc app__flex"
           >
-            <h2 style={{ color: "#ECB390" }}>Description:</h2>
+            <h2 style={{ color: "var(--button-color-alt)" }}>Description:</h2>
             <br />
             <h3 style={{ color: "#333333" }}>{movie?.overview}</h3>
           </div>
