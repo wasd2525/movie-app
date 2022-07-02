@@ -6,8 +6,7 @@ import { fetchGenres } from "../../../API/index";
 
 const Genres = () => {
   const { updateMovieGenre, movie } = useContext(MovieContext);
-
-  const [genreList, setGenreList] = useState();
+  const [genreList, setGenreList] = useState([]);
 
   const selectGenre = (e) => {
     if (!movie.genres.find((x) => String(x.id) === String(e.target.id)))
@@ -16,18 +15,14 @@ const Genres = () => {
   };
 
   useEffect(() => {
-    fetchGenres().then((req) => {
-      setGenreList(req.data.genres);
+    fetchGenres().then(({ data: { genres } }) => {
+      setGenreList(genres);
     });
   }, []);
 
   return (
     <div className="app__genres app__flex">
-      <motion.div
-        // whileInView={{ x: [-200, 0], opacity: [0, 1] }}
-        // transition={{ duration: 1 }}
-        className="app__genres-info"
-      >
+      <div className="app__genres-info">
         <div className="app__genres-badge">
           <div className="badge-cmp app__flex">
             <div style={{ padding: "2rem 0rem" }}>
@@ -35,28 +30,44 @@ const Genres = () => {
               <h2 className="p-text">Pick up to 4 Genres</h2>
             </div>
 
-            <div className="grid">
-              {genreList?.map((i) => (
-                <div className={`itemG span-col-2 span-row-2`}>
-                  <button
-                    name={i.name}
-                    id={i.id}
-                    onClick={selectGenre}
-                    className={
-                      movie.genres.find((x) => String(x.id) === String(i.id))
-                        ? "button__selected-genre"
-                        : "button__notselected-genre"
-                    }
-                  >
-                    {i.name}
-                  </button>
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 1 }}
+            >
+              {genreList.length != 0 ? (
+                <div className="grid">
+                  {genreList?.map((i) => (
+                    <div key={i.id} className={`itemG span-col-2 span-row-2`}>
+                      <button
+                        name={i.name}
+                        id={i.id}
+                        onClick={selectGenre}
+                        className={
+                          movie.genres.find(
+                            (x) => String(x.id) === String(i.id)
+                          )
+                            ? "button__selected-genre"
+                            : "button__notselected-genre"
+                        }
+                      >
+                        {i.name}
+                      </button>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              ) : (
+                <div class="lds-ring">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              )}
+            </motion.div>
             {console.log(movie)}
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

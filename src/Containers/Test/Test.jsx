@@ -1,7 +1,8 @@
 import React from "react";
-import "./Test.scss";
 import { motion } from "framer-motion";
-import movieIcon from "../../assets/movie.svg";
+import movieIcon from "../../assets/notfound.svg";
+import randomovie from "../../assets/randomovie.svg";
+import "./Test.scss";
 
 const Test = () => {
   return (
@@ -11,26 +12,27 @@ const Test = () => {
         transition={{ duration: 0.5 }}
         className="app__test-info"
       >
-        <div className="badge-cmp app__flex">
+        <div className="app__flex-notfound">
+          <img alt="background" src={movieIcon} className="notfoundIMG" />
+
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
+              margin: "5vh",
             }}
           >
-            <h2 className="title-text">
-              Hi!
-              <br />
-              Welcome to Rando
-              <span style={{ color: "#94b49f" }}>Movie</span>
+            <h2 className="notfound-text">
+              Sorry, we couldn't find the{" "}
+              <span style={{ color: "#94b49f" }}>Movie</span> you were looking
+              for
             </h2>
-            <a href="/">
+            <a href="/movie">
               <button className="buttonALT">Begin</button>
             </a>
           </div>
-          <img alt="icon" src={movieIcon} style={{ width: "50%" }} />
         </div>
       </motion.div>
     </div>

@@ -45,8 +45,7 @@ const Length = () => {
                 }
                 onClick={selectLength}
               >
-                I'm looking for a something not too long, but not too short
-                either.
+                I'm looking for a something in the middle.
               </button>
               <button
                 name="long"
@@ -58,7 +57,7 @@ const Length = () => {
                 }
                 onClick={selectLength}
               >
-                I'm looking for something lengthy
+                I'm looking for a long movie.
               </button>
               {console.log(movie)}
             </div>

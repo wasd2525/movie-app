@@ -14,16 +14,18 @@ const Decades = () => {
   };
 
   const fetchMovie = async () => {
-    const id = await fetchMovieID(
+    const { data } = await fetchMovieID(
       movie.decades,
       movie.genres.map((genre) => genre.id),
       movie.length
     );
-    navigate(
-      `/movie/${
-        id.data.results[Math.floor(Math.random() * id.data.results.length)].id
-      }`
-    );
+    if (data.results[Math.floor(Math.random() * data.results.length)])
+      navigate(
+        `/movie/${
+          data.results[Math.floor(Math.random() * data.results.length)].id
+        }`
+      );
+    else navigate(`/test`);
   };
 
   return (
@@ -88,7 +90,7 @@ const Decades = () => {
                 2010s
               </button>
             </div>
-            <button onClick={fetchMovie} className="buttonALT2">
+            <button onClick={() => fetchMovie()} className="buttonALT2">
               find movie
             </button>
           </div>

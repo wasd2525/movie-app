@@ -11,7 +11,7 @@ export function MovieProvider({ children }) {
   });
 
   const updateMovieGenre = (action, movieData) => {
-    if (action === "add")
+    if (action === "add" && movie.genres.length < 4)
       setMovie({ ...movie, genres: [...movie.genres, movieData] });
     else
       setMovie({
