@@ -34,7 +34,7 @@ const Genres = () => {
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 1 }}
             >
-              {genreList.length != 0 ? (
+              {genreList.length !== 0 ? (
                 <div className="grid">
                   {genreList?.map((i) => (
                     <div key={i.id} className={`itemG span-col-2 span-row-2`}>
