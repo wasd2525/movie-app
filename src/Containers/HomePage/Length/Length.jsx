@@ -21,7 +21,6 @@ const Length = () => {
           <div className="badge-cmp app__flex">
             <div style={{ padding: "2rem 1rem" }}>
               <h2 className="title-text">Pick a Length</h2>
-              <h2 className="p-text">______</h2>
             </div>
             {console.log(movie)}
             <div className="app__length-buttons">

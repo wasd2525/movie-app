@@ -3,7 +3,8 @@ import "./MoviePage.scss";
 import { motion } from "framer-motion";
 import { fetchMovie, fetchTrailer, fetchSimilar } from "../../API/index";
 import dis from "../../assets/dis.png";
-import noData from "../../assets/data.jpg";
+import noData from "../../assets/nodata.jpg";
+import noDataAlt from "../../assets/nodataalt.jpg";
 
 import { useParams } from "react-router-dom";
 
@@ -51,7 +52,7 @@ const MoviePage = () => {
               }}
               alt="backdrop"
               src={
-                movie.backdrop_path
+                movie?.backdrop_path
                   ? `${imgUrl}${movie?.backdrop_path}`
                   : noData
               }
@@ -139,6 +140,7 @@ const MoviePage = () => {
                   </button>
                 </a>
               </div>
+              {/* Should reset state instead of redirecting */}
               <a href={`/movie`} rel="noreferrer">
                 <button
                   style={{
@@ -191,7 +193,11 @@ const MoviePage = () => {
                       filter: "brightness(70%)",
                     }}
                     alt="backdrop"
-                    src={`${imgUrlS}${simMovie?.backdrop_path}`}
+                    src={
+                      simMovie?.backdrop_path
+                        ? `${imgUrlS}${simMovie?.backdrop_path}`
+                        : noDataAlt
+                    }
                   />
                   <div className="movie-data-cmp">
                     <h2>{simMovie?.title}</h2>

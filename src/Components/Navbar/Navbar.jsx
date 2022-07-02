@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Navbar.scss";
-import logo from "../assets/logo-alt.svg";
+import logo from "../../assets/logo-alt.svg";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 
 const Navbar = () => {
+  // for mobile navbar
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -22,9 +23,10 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+
+      {/* mobile version of navbar */}
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
-
         {toggle && (
           <motion.div>
             <HiX onClick={() => setToggle(false)} />

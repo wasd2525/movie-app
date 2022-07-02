@@ -1,15 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import movieIcon from "../../assets/notfound.svg";
-import "./Test.scss";
+import "./NotFound.scss";
 
-const Test = () => {
+const NotFound = () => {
   return (
-    <div className="app__test app__flex">
+    <div className="app__notfound app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
-        className="app__test-info"
+        className="app__notfound-info"
       >
         <div className="app__flex-notfound">
           <img alt="background" src={movieIcon} className="notfoundIMG" />
@@ -38,4 +38,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default NotFound;
