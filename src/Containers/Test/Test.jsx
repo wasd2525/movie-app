@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import movieIcon from "../../assets/notfound.svg";
-import randomovie from "../../assets/randomovie.svg";
 import "./Test.scss";
 
 const Test = () => {
