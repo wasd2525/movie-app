@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 const MovieContext = createContext();
 
 export function MovieProvider({ children }) {
+  // main state of app, keeps all data that is required to fetch final movie
   const [movie, setMovie] = useState({
     genres: [],
     length: { from: null, to: null },

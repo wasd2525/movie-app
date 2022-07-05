@@ -169,7 +169,7 @@ const MoviePage = () => {
             <h3 style={{ color: "#333333" }}>{movie?.overview}</h3>
           </div>
 
-          <div style={{ width: "100%", padding: "3rem 2rem 1rem 1rem" }}>
+          <div style={{ width: "100%", padding: "3rem 1rem 1rem 0" }}>
             <h3
               style={{ fontSize: "2.5rem", textAlign: "left" }}
               className="title-text"
@@ -181,7 +181,7 @@ const MoviePage = () => {
             {similar.slice(0, 4).map((simMovie) => (
               <a style={{ display: "flex" }} href={`/movie/${simMovie.id}`}>
                 <div
-                  style={{ margin: "1rem", padding: "0px" }}
+                  style={{ padding: "0px" }}
                   className="badge-cmp-desc app__flex"
                 >
                   <img

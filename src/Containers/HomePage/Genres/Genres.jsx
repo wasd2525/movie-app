@@ -5,7 +5,7 @@ import MovieContext from "../../../MovieContext";
 import { fetchGenres } from "../../../API/index";
 
 const Genres = () => {
-  const { updateMovieGenre, movie } = useContext(MovieContext); // gets stat and the set state of Genres
+  const { updateMovieGenre, movie } = useContext(MovieContext); // gets state and the set state of Genres
   const [genreList, setGenreList] = useState([]); // state with array of all genres on the api
 
   const selectGenre = (e) => {
@@ -33,8 +33,10 @@ const Genres = () => {
           // whileInView={{ opacity: [0, 1] }}
           // transition={{ duration: 1 }}
           >
+            {/* checks if genreList has been populated, if not, show loading animation */}
             {genreList.length !== 0 ? (
               <div className="grid">
+                {/* Loops through entire genre list and displays them all for selection */}
                 {genreList?.map((i) => (
                   <div key={i.id} className={`itemG span-col-2 span-row-2`}>
                     <button
@@ -53,6 +55,7 @@ const Genres = () => {
                 ))}
               </div>
             ) : (
+              // Loading animation
               <div class="lds-ring">
                 <div></div>
                 <div></div>

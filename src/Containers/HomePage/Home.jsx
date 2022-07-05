@@ -5,15 +5,18 @@ import Decades from "./Decades/Decades.jsx";
 import MovieContext from "../../MovieContext";
 
 const Home = () => {
+  const { movie } = useContext(MovieContext);
+
+  // will enable next button on the condition that user has pick at least 1 genre
   const hasGenres = () => {
     return movie.genres?.length === 0;
   };
 
+  // will enable next button on the condition that user has picked length
   const hasLength = () => {
     return movie.length.from === null;
   };
 
-  const { movie } = useContext(MovieContext);
   const [step, setStep] = useState(1);
   const stepper = () => {
     switch (step) {
@@ -38,6 +41,7 @@ const Home = () => {
           alignItems: "center",
         }}
       >
+        {/* Will only enable buttons if user has input */}
         {step === 1 && (
           <button
             style={hasGenres() ? { backgroundColor: "lightgray" } : null}
